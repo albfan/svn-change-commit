@@ -90,7 +90,7 @@ then
 fi
 
 svn log file://$REPO -r $REVISION
-echo -e $COMMIT > $TMP_COMMIT_FILE
+echo -e "$COMMIT" > $TMP_COMMIT_FILE
 sudo svnadmin setlog $REPO -r$REVISION  --bypass-hooks $TMP_COMMIT_FILE
 rm $TMP_COMMIT_FILE
 svn log file://$REPO -r $REVISION
