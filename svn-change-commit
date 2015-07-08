@@ -67,26 +67,26 @@ done
 if [ -z "$REPO" ]
 then
 	echo Missing repo option
-	EXIT=1
+	EXITCODE=1
 fi
 
 if [ -z "$REVISION" ]
 then
 	echo Missing revision option
-	EXIT=1
+	EXITCODE=1
 
 fi
 
 if [ -z "$COMMIT" ]
 then
 	echo Missing commit option
-	EXIT=1
+	EXITCODE=1
 fi
 
-if [ -n "$EXIT" ]
+if [ -n "$EXITCODE" ]
 then
 	help
-	exit $EXIT
+	exit $EXITCODE
 fi
 
 svn log file://$REPO -r $REVISION
